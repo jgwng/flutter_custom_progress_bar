@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_progress_bar/progress_bar.dart';
+import 'package:flutter_custom_progress_bar/flutter_custom_progress_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,12 +36,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: const Center(
-        child: ProgressBar(
-          totalRatio: 50,
-          backgroundColor: Colors.grey,
-          progressColor: Colors.green,
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:  const [
+          ProgressBar(
+            totalRatio: 50,
+            backgroundColor: Colors.grey,
+            progressColor: Colors.green,
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          CircularProgressBar(
+            ratio: 50,
+            backgroundColor: Colors.grey,
+            progressColor: Colors.blue,
+          ),
+
+        ],
       ),
        );
   }
