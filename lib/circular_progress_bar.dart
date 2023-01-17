@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'dart:math' as math;
 
 class CircularProgressBar extends StatefulWidget {
@@ -7,11 +6,13 @@ class CircularProgressBar extends StatefulWidget {
       {Key? key,
       this.radius,
       required this.ratio,
+        required this.size,
       this.backgroundColor,
       this.progressColor})
       : super(key: key);
   final double? radius;
   final double? ratio;
+  final double? size;
   final Color? progressColor;
   final Color? backgroundColor;
 
@@ -55,13 +56,13 @@ class _CircularProgressBarState extends State<CircularProgressBar>
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: 200,
-      height: 200,
+      width: widget.size ?? 200,
+      height: widget.size ?? 200,
       child: ValueListenableBuilder(
         valueListenable: progressRatio,
         builder: (BuildContext context, double value, Widget? child){
           return CustomPaint(
-            painter: ArcPainter(radius: 100,percentage: (animation.value)),
+            painter: ArcPainter(radius: (widget.size ?? 200) * 0.5,percentage: (animation.value)),
             child: percentInfo(),
           );
         },

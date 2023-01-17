@@ -14,3 +14,6 @@ There is only one types.
 ### 1. Bar Style
 - Starts from left and show progress that user set to right direction
 
+### 2. Circle Style
+- Starts from top and show progress that user set to clockwise direction
+

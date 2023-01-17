@@ -49,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           CircularProgressBar(
             ratio: 50,
+            size: 200,
             backgroundColor: Colors.grey,
             progressColor: Colors.blue,
           ),
